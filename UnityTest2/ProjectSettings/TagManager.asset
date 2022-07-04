@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - WALL
+  - BLOCK
+  - RACKET
   layers:
   - Default
   - TransparentFX
