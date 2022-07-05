@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private float speed = 1.0f;
+
     public float x;
     private float length = 2.0f;
     private float timeAfterMove;
@@ -19,7 +21,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeAfterMove += timeAfterMove.deltaTime;
+        timeAfterMove += Time.deltaTime;
         x = Mathf.Sin(timeAfterMove) * length;
 
         transform.position = new Vector3(x * speed, transform.position.y, transform.position.z);

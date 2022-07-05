@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class BulletGenerator2 : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    private float time = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
 
-    public void Shoot()
-    {
-        
     }
 
     // Update is called once per frame
@@ -25,11 +23,11 @@ public class BulletGenerator2 : MonoBehaviour
 
         if (this.time > 0.5f)
         {
-            //프리펩을 이용해서 오브젝트(총알) 생성
+            // 프리팹을 이용해서 오브젝트(총알) 생성
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-            // BulleController에서 Shoot 메서드 호출(총알 발사)
-            bullet.GetComponent<BulletController>().ShootToEnemy();
+            // BulletController에서 Shoot 메서드 호출(총알 발사)
+            bullet.GetComponent<BulletController>().ShootToPlayer();
 
             this.time = 0.0f;
         }
@@ -37,10 +35,9 @@ public class BulletGenerator2 : MonoBehaviour
         /*
         if (Input.GetMouseButtonDown(0))
         {
-            //프리펩을 이용해서 오브젝트(총알) 생성
+            // 프리팹을 이용해서 오브젝트(총알) 생성
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-
-            // BulleController에서 Shoot 메서드 호출(총알 발사)
+            // BulletController에서 Shoot 메서드 호출(총알 발사)
             bullet.GetComponent<BulletController>().ShootToPlayer();
         }
         */

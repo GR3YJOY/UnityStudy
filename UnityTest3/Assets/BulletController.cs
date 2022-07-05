@@ -50,7 +50,7 @@ public class BulletController : MonoBehaviour
         {
             // UI Ä«¿îÅÍ +1
             GameObject manager = GameObject.Find("ScoreManager");
-            manager.GetComponent<ScoreScript>().IncScore(10);
+            manager.GetComponent<ScoreScript>().IncScore(2);
 
             // ÃÑ¾Ë ÆÄ±«
             Destroy(gameObject, 0.0f);
@@ -60,7 +60,7 @@ public class BulletController : MonoBehaviour
         {
             // UI Ä«¿îÅÍ +1
             GameObject manager = GameObject.Find("ScoreManager");
-            manager.GetComponent<ScoreScript>().IncScore(8);
+            manager.GetComponent<ScoreScript>().IncScore(3);
 
             // ÃÑ¾Ë ÆÄ±«
             Destroy(gameObject, 0.0f);

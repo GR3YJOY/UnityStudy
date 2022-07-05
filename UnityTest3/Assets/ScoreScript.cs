@@ -18,7 +18,7 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void IncScore()
@@ -27,16 +27,10 @@ public class ScoreScript : MonoBehaviour
         score.text = count.ToString();
     }
 
-    public void OnCollisionEnter(Collision coll)
+    public void IncScore(int hit)
     {
-        if (coll.collider.tag == "")
-        {
-            //UI Ä«¿îÅÍ +1
-            GameObject manager = GameObject.Find("ScoreManager");
-            manager.GetComponent<ScoreScript>().IncScore();
-
-            //ÃÑ¾Ë ÆÄ±«
-            Destroy(gameObject);
-        }
+        count += hit;
+        score.text = count.ToString();
     }
+
 }
